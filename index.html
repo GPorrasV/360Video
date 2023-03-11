@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset= "UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="video - A-frame">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <script src="js/play-on-click.js"></script>
+    <script src="js/hide-on-play.js"></script>
+    <title>Recorrido 360 Aurora Boreal</title>
+    </head>
+
+  
+  <body>
+    <a-scene>
+      <a-assets>
+        <video id="boreal" preload="auto" src="video360/boreal.mp4" autoplay loop="true"></video>
+      </a-assets>
+
+      <a-videosphere src="#boreal" play-on-click material geometry scale></a-videosphere>
+
+      <a-entity material="shader: flat; src: #boreal"
+                play-on-click
+                visible="false">
+      </a-entity>
+
+      <a-camera>
+        <a-entity
+          position="0 0 -1.5"
+          text="align: center;
+                width: 6;
+                wrapCount: 100;
+                color: black;
+                value: Click or tap to start video"
+          hide-on-play="#boreal">
+        </a-entity>
+        <a-cursor></a-cursor>
+      </a-camera>
+    </a-scene>  
+</body>
+</html>
+
+
+
